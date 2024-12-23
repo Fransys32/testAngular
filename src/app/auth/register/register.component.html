@@ -1,0 +1,78 @@
+<div class="register-container">
+    <div class="register-card">
+        <h2>Crear cuenta</h2>
+        <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        [(ngModel)]="nombre" 
+                        name="nombre" 
+                        required
+                        class="form-control"
+                        placeholder="Ingresa tu nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input 
+                        type="text" 
+                        id="apellido" 
+                        [(ngModel)]="apellido" 
+                        name="apellido" 
+                        required
+                        class="form-control"
+                        placeholder="Ingresa tu apellido">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    [(ngModel)]="email" 
+                    name="email" 
+                    required
+                    class="form-control"
+                    placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input 
+                    type="password" 
+                    id="contrasena" 
+                    [(ngModel)]="contrasena" 
+                    name="contrasena" 
+                    required
+                    class="form-control"
+                    placeholder="Ingresa tu contraseña">
+            </div>
+
+            <div class="form-group">
+                <label for="sueldo_base">Sueldo Base</label>
+                <input 
+                    type="number" 
+                    id="sueldo_base" 
+                    [(ngModel)]="sueldo_base" 
+                    name="sueldo_base" 
+                    required
+                    class="form-control"
+                    placeholder="Ingresa el sueldo base">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" [disabled]="!registerForm.form.valid">
+                    Registrarse
+                </button>
+                <button type="button" class="btn btn-secondary" (click)="goToLogin()">
+                    Volver al Login
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  

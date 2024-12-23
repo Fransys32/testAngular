@@ -1,0 +1,198 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &.logout {
+    background-color: #dc3545;
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+}
+
+.dashboard-content {
+  display: grid;
+  gap: 30px;
+}
+
+.gastos-comunes, .gastos-adicionales, .resumen-financiero {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gastos-form, .gasto-adicional-form {
+  display: grid;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.gasto-input {
+  display: grid;
+  gap: 10px;
+
+  label {
+    color: #555;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+    }
+  }
+
+  button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.gasto-adicional-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 10px;
+  align-items: start;
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+    }
+  }
+
+  button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.saldos-principales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.distribucion-saldos {
+  h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #495057;
+    font-weight: 500;
+  }
+}
+
+.distribucion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.saldo-item, .distribucion-item {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  h3, h4 {
+    margin-bottom: 10px;
+    color: #495057;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+  }
+}
+
+.distribucion-item {
+  border: 1px solid #dee2e6;
+  
+  h4 {
+    color: #495057;
+  }
+} 

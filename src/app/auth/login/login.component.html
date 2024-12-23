@@ -1,0 +1,22 @@
+<div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" class="form-control" [(ngModel)]="contrasena" name="contrasena" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    </form>
+
+    <div class="register-link">
+        <p>¿No tienes una cuenta?</p>
+        <button class="btn btn-secondary" (click)="goToRegister()">Registrarse</button>
+    </div>
+</div>
+  

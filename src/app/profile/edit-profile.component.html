@@ -1,0 +1,72 @@
+<div class="edit-profile-container">
+    <div class="edit-profile-card">
+        <h2>Editar Perfil</h2>
+        <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre"
+                        [(ngModel)]="userData.nombre" 
+                        class="form-control"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input 
+                        type="text" 
+                        id="apellido" 
+                        name="apellido"
+                        [(ngModel)]="userData.apellido" 
+                        class="form-control"
+                        required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    [(ngModel)]="userData.email" 
+                    class="form-control"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="sueldo_base">Sueldo Base</label>
+                <input 
+                    type="number" 
+                    id="sueldo_base" 
+                    name="sueldo_base"
+                    [(ngModel)]="userData.sueldo_base" 
+                    class="form-control"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Nueva Contraseña (opcional)</label>
+                <input 
+                    type="password" 
+                    id="contrasena" 
+                    name="contrasena"
+                    [(ngModel)]="userData.contrasena" 
+                    class="form-control"
+                    placeholder="Ingresa solo si deseas cambiar tu contraseña">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" [disabled]="!profileForm.form.valid">
+                    Guardar Cambios
+                </button>
+                <button type="button" class="btn btn-secondary" (click)="goBack()">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+</div> 

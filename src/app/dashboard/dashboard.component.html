@@ -1,0 +1,71 @@
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Dashboard</h1>
+        <nav class="dashboard-nav">
+            <button class="nav-button">Inicio</button>
+            <button class="nav-button" (click)="goToEditProfile()">Editar Perfil</button>
+            <button class="nav-button logout" (click)="onLogout()">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <main class="dashboard-content">
+        <!-- Sección de Gastos Comunes -->
+        <section class="gastos-comunes">
+            <h2>Ingresar Gastos Comunes</h2>
+            <div class="gastos-form">
+                <div class="gasto-input">
+                    <label>Monto Luz</label>
+                    <input type="number" [(ngModel)]="nuevoGastoLuz" placeholder="Ingrese monto de luz">
+                    <button (click)="agregarGastoLuz()">Agregar Gasto Luz</button>
+                </div>
+                <div class="gasto-input">
+                    <label>Monto Agua</label>
+                    <input type="number" [(ngModel)]="nuevoGastoAgua" placeholder="Ingrese monto de agua">
+                    <button (click)="agregarGastoAgua()">Agregar Gasto Agua</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Gastos Adicionales -->
+        <section class="gastos-adicionales">
+            <h2>Ingresar Gasto Adicional</h2>
+            <div class="gasto-adicional-form">
+                <input type="text" [(ngModel)]="nuevoGastoDescripcion" placeholder="Descripción">
+                <input type="number" [(ngModel)]="nuevoGastoMonto" placeholder="Monto">
+                <button (click)="agregarGastoAdicional()">Agregar Gasto</button>
+            </div>
+        </section>
+
+        <!-- Sección de Resumen Financiero -->
+        <section class="resumen-financiero">
+            <div class="saldos-principales">
+                <div class="saldo-item">
+                    <h3>Sueldo Base</h3>
+                    <p>{{ sueldoBase | currency:'CLP':'symbol-narrow':'1.0-0' }}</p>
+                </div>
+                <div class="saldo-item">
+                    <h3>Sueldo después de Gastos Comunes</h3>
+                    <p>{{ sueldoDespuesGastos | currency:'CLP':'symbol-narrow':'1.0-0' }}</p>
+                </div>
+            </div>
+
+            <div class="distribucion-saldos">
+                <h3>Distribución del Sueldo Disponible</h3>
+                <div class="distribucion-grid">
+                    <div class="distribucion-item">
+                        <h4>Comida ({{ porcentajes.comida }}%)</h4>
+                        <p>{{ saldos.comida | currency:'CLP':'symbol-narrow':'1.0-0' }}</p>
+                    </div>
+                    <div class="distribucion-item">
+                        <h4>Recreación ({{ porcentajes.recreacion }}%)</h4>
+                        <p>{{ saldos.recreacion | currency:'CLP':'symbol-narrow':'1.0-0' }}</p>
+                    </div>
+                    <div class="distribucion-item">
+                        <h4>Ahorros ({{ porcentajes.ahorros }}%)</h4>
+                        <p>{{ saldos.ahorros | currency:'CLP':'symbol-narrow':'1.0-0' }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div> 
